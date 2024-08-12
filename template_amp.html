@@ -11,11 +11,10 @@
     <meta name="referrer" content="always">
     <meta name="language" content="pt-br">
     <meta name="author" content="{nome_empresa}">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.ampproject.org; style-src 'self' 'unsafe-inline' https://cdn.ampproject.org; img-src 'self' data: https:;">
-
     <!-- <link rel="canonical" href="{canonical_url}">  -->
     <link rel="canonical" href="https://www.example.com/test-page.html">
     <link rel="icon" href="{icone}">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.ampproject.org; style-src 'self' 'unsafe-inline' https://cdn.ampproject.org; img-src 'self' data: https:; connect-src 'self' https://cdn.ampproject.org; font-src 'self' data: https:;">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
@@ -24,7 +23,7 @@
     <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
     <style>
         .hero {
-            background: url('{imagem_fundo}') no-repeat center center;
+            background: url('./thumbnail-default.jpg') no-repeat center center;
             background-size: cover;
             color: #fff;
             text-align: left;
@@ -609,7 +608,7 @@
           "@context": "http://schema.org",
           "@type": "NewsArticle",
           "headline": "{titulo_principal}",
-          "image": ["{imagem_servico}"],
+          "image": ["./thumbnail-default.jpg"],
           "datePublished": "{data_criacao}",
           "dateModified": "{data_criacao}",
           "author": {
@@ -702,7 +701,7 @@
     <!-- Serviço -->
     <section class="service">
         <div class="service-container">
-            <amp-img alt="Imagem do serviço" src="{imagem_servico}" width="800" height="500" layout="responsive"></amp-img>
+            <amp-img alt="Imagem do serviço" src="./thumbnail-default.jpg" width="800" height="500" layout="responsive"></amp-img>
             <div class="content-wrapper">
                 <div class="text-content">
                     <h2>{titulo_servico}</h2>
