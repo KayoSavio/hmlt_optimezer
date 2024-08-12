@@ -11,17 +11,15 @@
     <meta name="referrer" content="always">
     <meta name="language" content="pt-br">
     <meta name="author" content="{nome_empresa}">
+    <!-- <link rel="canonical" href="{canonical_url}">  -->
     <link rel="canonical" href="https://www.example.com/test-page.html">
     <link rel="icon" href="{icone}">
-    
-    <!-- AMP Scripts -->
-    <script async src="https://cdn.ampproject.org/v0.js"></script> <!-- Essencial, mantenha async -->
-    <script defer custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script> <!-- Menos essencial, adie o carregamento -->
-    <script defer custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script> <!-- Menos essencial, adie o carregamento -->
-    <script defer custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script> <!-- Menos essencial, adie o carregamento -->
-    <script defer custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script> <!-- Menos essencial, adie o carregamento -->
-
-    <!-- CSS Crítico -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.ampproject.org; style-src 'self' 'unsafe-inline' https://cdn.ampproject.org; img-src 'self' data: https:; connect-src 'self' https://cdn.ampproject.org; font-src 'self' data: https:;">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script defer custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script defer custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script defer custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script defer custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <style>
         .hero {
             background: url('{imagem_fundo}') no-repeat center center;
@@ -70,8 +68,6 @@
             background: #218838;
         }
     </style>
-
-    <!-- AMP Boilerplate -->
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
@@ -100,7 +96,6 @@
             to { visibility: visible; }
         }
     </style>
-    
     <noscript>
         <style amp-boilerplate>
             body {
@@ -111,14 +106,12 @@
             }
         </style>
     </noscript>
-
-    <!-- AMP Custom Styles -->
     <style amp-custom>
-        /* Restante do CSS */
-        html, body {
-            overflow-x: hidden;
-        }
-        
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -129,10 +122,468 @@
             overflow-x: hidden; 
         }
         
-        /* Continue com o restante do seu CSS */
-    </style>
+        #success-message{
+            color: #25D366;
+            padding: 5px;
+        }
 
-    <!-- JSON-LD Schema -->
+        a{
+            text-decoration: none;
+            color: #0056b3;
+        }
+       
+        /* .hero {
+        background: url('{imagem_fundo}') no-repeat center center;
+        background-size: cover;
+        color: #fff;
+        text-align: left;
+        padding-left: 3vw;
+        padding-right: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        }
+
+        
+        .hero-content {
+            max-width: 38em;
+            padding: 20px;
+        }
+          
+        .hero-content h1 {
+            font-size: 2.5em;
+            color: {cor_font_frase_principal};
+            line-height: 1.4em;
+        }
+        .hero-content p {
+            margin-top: -1vw;
+            margin-bottom: 1.4vw;
+            font-size: 1.2em;
+            color: {cor_font_subtitulo};
+        }
+        .hero-content a {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            border-radius: 2em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .hero-content a:hover {
+            background: #218838;
+        } */
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 5em 5vw;
+            background: #fff;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            text-align: center;
+            max-width: 300px;
+            padding: 2.7em;
+            border: 1px solid #fafafa; 
+            box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.05); 
+            border-radius: 10px; 
+            margin: 1vw;
+        }
+        
+        .feature-item h2 {
+            font-size: 1.3vw;
+            margin-bottom: 0.5em;
+            margin-top: -0px;
+            text-align: center;
+        }
+
+        .feature-item p {
+            font-size: 1vw;
+            line-height: 1.9em;
+            color: #6c757d;
+        }
+        
+        .btn {
+            background: #136e28;
+            color:  #FFFFFF;
+            border: none;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            display: inline-flex;
+            gap: 0.5em;
+            border-radius: 2em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background: #20b955;
+        }
+
+        h2 {
+            text-align: left;
+            margin-bottom: 1em;
+            margin-top: 2em;
+            font-size: 2em;
+            line-height: 1.4em;
+            padding-top: 2em;
+        }
+        h3 {
+            text-align: left;
+            margin-bottom: 1.25em;
+            margin-top: 1.55em;
+        }
+        
+        li {
+            color: #fff;
+            line-height: 1.9em;
+            margin-top: 1em;
+        }
+
+        .service{
+            background: {cor_fundo_servico};
+            width: 100%;
+            padding: 10px;
+        }
+
+        .service h2{
+            margin-top: 0px;
+            padding-top: 5px;
+            color: #fff; /* Cor do titulo serviço */
+        }
+      
+      	.service h3{
+            color: #fff; /* Cor do titulo serviço */
+        }
+
+        .service p{
+            color: #fff; /* Cor do texto serviço */
+            margin-top: -1vw;
+            margin-bottom: 2vw;
+        }
+
+        .about-us {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0vw;
+            background: #f5f5f5; 
+            color: #000;
+            width: 100%;
+        }
+
+        .about-us-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0em;
+        }
+
+        .about-us-image {
+            flex: 1;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .about-us-image:hover {
+            cursor: pointer;
+        }
+
+        .about-us-text {
+            text-align: left;
+            color: #000;
+            padding: 40px;
+            width: 50%;
+        }
+
+        .about-us-text h2 {
+            font-size: 2.1vw;
+            color: #000; /* Cor do título */
+            margin-bottom: -0.3vw;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .about-us-text p {
+            font-size: 1.1vw;
+            line-height: 1.6em;
+            color: #333; /* Cor do texto */
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 auto;
+            padding: 0em;
+        }
+        .text-content {
+            text-align: left;
+            margin-top: 1.5em;
+            width: 100%;
+        }
+        .image-content amp-img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 1.25em;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+        .whatsapp-button:hover {
+            background: #20b955;
+        }
+
+        .contact {
+            background: {cor_fundo_formulario};
+            text-align: left;
+            padding: 100px 10px;
+            padding-top: 30px;
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column;
+        }
+
+        .contact h2{
+            color: #fff;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .contact fieldset {
+            border: none;
+            padding:0;
+        }
+        .contact label {
+            display: block;
+            margin-bottom: 1em;
+            color: #fff;
+        }
+        .contact label span {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding-top: 0.7em;
+            padding-bottom: 0.7em;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 0.25em;
+            font-family: Arial, sans-serif;
+        }
+        .contact input[type="submit"] {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding-top: 0.7em;
+            padding-bottom: 0.7em;
+            font-size: 1.2em;
+            border-radius: 0.25em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+        .contact input[type="submit"]:hover {
+            background: #218838;
+        }
+
+        .address {
+            background: #fff;
+            color: #000;
+            text-align: center;
+            padding: 6em 5vw;
+        }
+        .address p {
+            margin-top: 1em;
+            color: #000;
+        }
+        .address a {
+            color: #fff;
+            background: #28a745;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 0.6em 2em;
+            border-radius: 2em;
+            transition: background 0.3s ease-in-out;
+        }
+        .address a:hover {
+            background: #218838;
+        }
+      
+        form {
+            width: 50%;
+        }
+        .service-container {
+            width: 55%;
+            margin: 0 auto;
+            padding: 70px;
+        } 
+
+
+
+
+      /*Versão Celular*/
+    @media (max-width: 530px) {
+
+    form {
+            width: 80%;
+        }
+
+    .service-container {
+        width: 100%;
+        padding: 0;
+    }
+      .service h3{
+            color: #fff;
+        	padding: 0 5vw;
+        }
+      
+    .hero {
+        background: url('{imagem_fundo_celular}') no-repeat center center;
+        background-size: cover;
+        justify-content: center;
+        max-width: 100%; 
+        box-sizing: border-box; 
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .hero-content {
+        text-align: center;
+        padding-top: 180px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .hero-content h1 {
+        font-size: 7vw;
+        padding-top: 2vw;
+    }
+    .hero-content p {
+        font-size: 4.4vw;
+        margin: -7px 0 4vw;
+    }
+    .hero-content a {
+        margin: 8px;
+        display: inline-block;
+    }
+    .features {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1em;
+        margin: 0;
+    }
+    .feature-item {
+        max-width: 100%;
+        padding: 2em 1.3em;
+        margin-bottom: 2em;
+    }
+    .feature-item h2 {
+        font-size: 6vw;
+    }
+    .feature-item p {
+        font-size: 4.3vw;
+        color: #6c757d;
+    }
+    section h2 {
+        font-size: 6vw;
+        margin-top: 0;
+    }
+    .service {
+        padding: 0;
+        width: 100%;
+        padding-bottom: 40px;
+    }
+    .service h2 {
+        font-size: 6vw;
+        margin-top: 1vw;
+        padding: 0 5vw;
+        color: #fff;
+    }
+    .service p {
+        font-size: 4vw;
+        padding: 0 5vw;
+        color: #fff;
+        margin: -1vw 0 5vw;
+    }
+
+    .service a {
+        margin-left: 20px;
+    }
+    
+    .text-content {
+        padding-bottom: 2em;
+    }
+    .about-us {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+    .about-us-wrapper {
+        flex-direction: column;
+        padding: 0;
+    }
+    .about-us-image, .about-us-text {
+        width: 100%;
+    }
+    .about-us-text {
+        padding: 7vw 0;
+    }
+    .about-us h2 {
+        padding: 6vw 5vw 0;
+        font-size: 6vw;
+    }
+    .about-us-text p {
+        font-size: 4vw;
+        padding: 0 5vw;
+        margin: 2vw 0 5vw;
+    }
+
+    .about-us a{
+        margin-left: 20px;
+    }
+
+    footer {
+        font-size: 3.5vw;
+        text-align: left;
+    }
+    h2 {
+        padding-top: 1em;
+    }
+
+    .contact input, .contact textarea {
+    width: 100%;
+    }
+
+}
+    </style>
     <script type="application/ld+json">
         {
           "@context": "http://schema.org",
@@ -151,7 +602,6 @@
           }
         }
     </script>
-    
     <script type="application/ld+json">
         {
           "@context": "http://schema.org",
@@ -181,7 +631,6 @@
         }
     </script>
 </head>
-
 <body style="flex-direction: column;justify-content: center;align-items: center;">
     <!-- GA4 -->
     <amp-analytics type="gtag" data-credentials="include">
