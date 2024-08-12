@@ -107,7 +107,19 @@
         </style>
     </noscript>
     <style amp-custom>
-    
+     @font-face {
+        font-family: 'CustomFont';
+        src: url('https://example.com/path-to-your-font.woff2') format('woff2');
+        font-display: swap;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+        color: {cor_font_frase_principal}; 
+        line-height: 1.4em;
+        font-family: 'CustomFont', sans-serif;
+    }
+
     html, body {
         overflow-x: hidden;
     }
