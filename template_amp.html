@@ -16,7 +16,7 @@
     <link rel="icon" href="{icone}">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.ampproject.org; style-src 'self' 'unsafe-inline' https://cdn.ampproject.org; img-src 'self' data: https:; connect-src 'self' https://cdn.ampproject.org; font-src 'self' data: https:;">
     <script defer src="https://cdn.ampproject.org/v0.js"></script>
-    <script defer custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <!-- <script defer custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script> -->
     <!-- <script defer custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script> -->
     <script defer custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script defer custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
@@ -835,11 +835,35 @@
             observer.observe(formSection); // Começa a observar a seção do formulário
         }
     
-        // Inicia o observador quando a página carrega
+        // Função para observar quando a seção de analytics entra na visualização
+        function observeAnalytics() {
+            const targetElement = document.querySelector('.hero-content'); // Carrega o script quando a .hero-content estiver visível
+            
+            const options = {
+                root: null, // viewport
+                threshold: 0.1 // 10% do elemento visível
+            };
+    
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Carrega o script amp-analytics quando a seção está visível
+                        loadScript('https://cdn.ampproject.org/v0/amp-analytics-0.1.js');
+                        observer.unobserve(entry.target); // Para de observar após carregar
+                    }
+                });
+            }, options);
+    
+            observer.observe(targetElement); // Começa a observar o elemento alvo
+        }
+    
+        // Inicia os observadores quando a página carrega
         window.addEventListener('DOMContentLoaded', (event) => {
-            observeForm();
+            observeForm();      // Observa o formulário
+            observeAnalytics(); // Observa o hero-content para analytics
         });
     </script>
+    
     
 </body>
 </html>
