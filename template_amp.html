@@ -14,7 +14,13 @@
     <!-- <link rel="canonical" href="{canonical_url}">  -->
     <link rel="canonical" href="https://www.example.com/test-page.html">
     <link rel="icon" href="{icone}">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.ampproject.org; style-src 'self' 'unsafe-inline' https://cdn.ampproject.org; img-src 'self' data: https:; connect-src 'self' https://cdn.ampproject.org; font-src 'self' data: https:;">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
+    script-src 'self' https://cdn.ampproject.org https://www.googletagmanager.com; 
+    connect-src 'self' https://cdn.ampproject.org https://www.googletagmanager.com;
+    worker-src 'self' blob:;
+    style-src 'self' 'unsafe-inline' https://cdn.ampproject.org;
+    ">
     <script defer src="https://cdn.ampproject.org/v0.js"></script>
     <!-- <script defer custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script> -->
     <!-- <script defer custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script> -->
