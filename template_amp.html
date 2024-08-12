@@ -3,15 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>{titulo_principal}</title>
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self'; 
-    script-src 'self' https://cdn.ampproject.org https://www.googletagmanager.com blob:; 
-    connect-src 'self' https://cdn.ampproject.org https://www.googletagmanager.com;
-    worker-src 'self' blob:;
-    font-src 'self' https://example.com;
-    style-src 'self' 'unsafe-inline' https://cdn.ampproject.org;
-    img-src 'self' https://example.com data: blob:;
-    ">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="{meta_descricao}">
     <meta name="keywords" content="{meta_keywords}">
@@ -21,62 +12,13 @@
     <meta name="language" content="pt-br">
     <meta name="author" content="{nome_empresa}">
     <link rel="canonical" href="{canonical_url}"> 
-    <!-- <link rel="canonical" href="https://www.example.com/test-page.html"> -->
     <link rel="icon" href="{icone}">
-    
-    <script defer src="https://cdn.ampproject.org/v0.js"></script>
-    <!-- <script defer custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script> -->
-    <!-- <script defer custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script> -->
-    <script defer custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <script defer custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-    <style>
-        .hero {
-            background: url('{imagem_fundo}') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            text-align: left;
-            padding-left: 3vw;
-            padding-right: 10vw;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-            width: 100%;
-            max-width: 100%; 
-            box-sizing: border-box;
-        }
-        
-        .hero-content h1 {
-            font-size: 2.5em;
-            color: {cor_font_frase_principal}; 
-            line-height: 1.4em;
-        }
-        
-        .hero-content p {
-            margin-top: -1vw;
-            margin-bottom: 1.4vw;
-            font-size: 1.2em;
-            color: {cor_font_subtitulo}; 
-        }
-        
-        .hero-content a {
-            background: #28a745;
-            color: #fff;
-            border: none;
-            padding: 0.5em 1em;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5em;
-            border-radius: 2em;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .hero-content a:hover {
-            background: #218838;
-        }
-    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
@@ -116,19 +58,7 @@
         </style>
     </noscript>
     <style amp-custom>
-     @font-face {
-        font-family: 'CustomFont';
-        src: url('https://example.com/path-to-your-font.woff2') format('woff2');
-        font-display: swap;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5em;
-        color: {cor_font_frase_principal}; 
-        line-height: 1.4em;
-        font-family: 'CustomFont', sans-serif;
-    }
-
+    
     html, body {
         overflow-x: hidden;
     }
@@ -153,7 +83,7 @@
             color: #0056b3;
         }
        
-        /* .hero {
+        .hero {
         background: url('{imagem_fundo}') no-repeat center center;
         background-size: cover;
         color: #fff;
@@ -165,8 +95,8 @@
         justify-content: flex-start;
         height: 100vh;
         width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
+        max-width: 100%; /* Adicionado */
+        box-sizing: border-box; /* Adicionado */
         }
 
         
@@ -177,14 +107,14 @@
           
         .hero-content h1 {
             font-size: 2.5em;
-            color: {cor_font_frase_principal};
+            color: {cor_font_frase_principal}; /* Cor do título */
             line-height: 1.4em;
         }
         .hero-content p {
             margin-top: -1vw;
             margin-bottom: 1.4vw;
             font-size: 1.2em;
-            color: {cor_font_subtitulo};
+            color: {cor_font_subtitulo}; /* Cor do subtítulo */
         }
         .hero-content a {
             background: #28a745;
@@ -201,7 +131,7 @@
         }
         .hero-content a:hover {
             background: #218838;
-        } */
+        }
 
         .features {
             display: flex;
@@ -235,7 +165,7 @@
         }
         
         .btn {
-            background: #136e28;
+            background: #25D366;
             color:  #FFFFFF;
             border: none;
             padding: 0.5em 1em;
@@ -692,26 +622,26 @@
             <amp-img alt="Logo da empresa" src="{logo}" width="{largura_logo}" height="{altura_logo}" layout="fixed"></amp-img>
             <h1>{titulo_principal}</h1>
             <p>{subtitulo_principal}</p>
-            <a href="https://api.whatsapp.com/send?phone=55{whatsapp}&text={mensagem_padrao_whatsapp}" style="background-color: #136e28;" class="whatsapp-link">Solicitar Orçamento</a>
+            <a href="https://api.whatsapp.com/send?phone=55{whatsapp}&text={mensagem_padrao_whatsapp}" class="whatsapp-link">Solicitar Orçamento</a>
         </div>
     </section>
 
     <!-- Features -->
     <div class="features">
         <div class="feature-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><path fill="currentColor" d="M11 21v-2h8v-7.1q0-2.925-2.037-4.962T12 4.9T7.038 6.938T5 11.9V18H4q-.825 0-1.412-.587T2 16v-2q0-.525.263-.987T3 12.275l.075-1.325q.2-1.7.988-3.15t1.975-2.525T8.762 3.6T12 3t3.225.6t2.725 1.663t1.975 2.512t1 3.15l.075 1.3q.475.225.738.675t.262.95v2.3q0 .5-.262.95t-.738.675V19q0 .825-.587 1.413T19 21zm-2-7q-.425 0-.712-.288T8 13t.288-.712T9 12t.713.288T10 13t-.288.713T9 14m6 0q-.425 0-.712-.288T14 13t.288-.712T15 12t.713.288T16 13t-.288.713T15 14m-8.975-1.55Q5.85 9.8 7.625 7.9T12.05 6q2.225 0 3.913 1.412T18 11.026Q15.725 11 13.813 9.8t-2.938-3.25q-.4 2-1.687 3.563T6.025 12.45"/></svg>
+            <amp-anim src="https://seo.smartcriacao.com/uploads/atendimento_humanizado.gif" width="100" height="100" alt="Atendimento Humanizado"></amp-anim>
             <h2>Atendimento Humanizado</h2>
             <p>Nosso atendimento humanizado coloca você no centro de tudo, oferecendo cuidado personalizado, empatia e soluções sob medida para suas necessidades. Experimente um serviço que realmente se importa com você.</p>
             <a href="https://api.whatsapp.com/send?phone=55{whatsapp}&text={mensagem_padrao_whatsapp}" class="whatsapp-link btn">Solicitar Orçamento</a>
         </div>
         <div class="feature-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 384 512"><path fill="currentColor" d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7l19.3 9.7c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7l-9.7 19.3c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2.8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1.4 14.2-1.5 20.1-5.4zM272 192a80 80 0 1 0-160 0a80 80 0 1 0 160 0M1.3 441.8l43.1-102.5c.2.1.3.2.4.4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7.2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2l-32.2-49.3l-56.1 8.3c-5.7.8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4L211.7 413c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1.4-.2.7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2.2-.3.4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3l-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7"/></svg>
+            <amp-anim src="https://seo.smartcriacao.com/uploads/qualidade.gif" width="100" height="100" alt="Qualidade"></amp-anim>
             <h2>Qualidade</h2>
             <p>Oferecemos serviços de alta qualidade, com atenção aos detalhes e compromisso com a excelência, garantindo resultados superiores e satisfação total em cada projeto. Confie em quem prioriza a qualidade.</p>
             <a href="https://api.whatsapp.com/send?phone=55{whatsapp}&text={mensagem_padrao_whatsapp}" class="whatsapp-link btn">Solicitar Orçamento</a>
         </div>
         <div class="feature-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 32 32"><path fill="currentColor" d="M31.453 4.625A6.796 6.796 0 0 0 27.385.562c-1.745-.563-3.333-.563-6.557-.563h-9.682c-3.198 0-4.813 0-6.531.531A6.805 6.805 0 0 0 .547 4.613C0 6.347 0 7.946 0 11.144v9.693c0 3.214 0 4.802.531 6.536a6.796 6.796 0 0 0 4.068 4.063c1.734.547 3.333.547 6.536.547h9.703c3.214 0 4.813 0 6.536-.531a6.807 6.807 0 0 0 4.078-4.078c.547-1.734.547-3.333.547-6.536v-9.667c0-3.214 0-4.813-.547-6.547zm-8.224 6.177l-1.245 1.24a.67.67 0 0 1-.891.01a6.715 6.715 0 0 0-4.292-1.573c-1.297 0-2.589.427-2.589 1.615c0 1.198 1.385 1.599 2.984 2.198c2.802.938 5.12 2.109 5.12 4.854c0 2.99-2.318 5.042-6.104 5.266l-.349 1.604a.648.648 0 0 1-.635.516h-2.391l-.12-.01a.668.668 0 0 1-.505-.786l.375-1.693a8.748 8.748 0 0 1-3.844-2.094v-.016a.641.641 0 0 1 0-.906l1.333-1.292a.66.66 0 0 1 .896 0a6.454 6.454 0 0 0 4.521 1.76c1.734 0 2.891-.734 2.891-1.896s-1.172-1.464-3.385-2.292c-2.349-.839-4.573-2.026-4.573-4.802c0-3.224 2.677-4.797 5.854-4.943l.333-1.641a.642.642 0 0 1 .641-.51h2.37l.135.016a.64.64 0 0 1 .495.76l-.359 1.828a9.945 9.945 0 0 1 3.302 1.849l.031.031c.25.266.25.667 0 .906z"/></svg>
+            <amp-anim src="https://seo.smartcriacao.com/uploads/preco_justo.gif" width="100" height="100" alt="Preço Justo"></amp-anim>
             <h2>Preço Justo</h2>
             <p>Proporcionamos o melhor custo-benefício com preços justos e acessíveis, alinhados à alta qualidade dos nossos serviços, garantindo transparência e satisfação em cada projeto.</p>
             <a href="https://api.whatsapp.com/send?phone=55{whatsapp}&text={mensagem_padrao_whatsapp}" class="whatsapp-link btn">Solicitar Orçamento</a>
@@ -747,60 +677,60 @@
     </section>
 
     <!-- Fale Conosco -->
-    <section class="contact">
-        <h2>Fale Conosco</h2>
-    <form method="post" action-xhr="../process_form.php" target="_top"
-        on="submit-success:AMP.setState({formData: {nome: '', email: '', telefone: '', mensagem: ''}}), AMP.setState({formStatus: 'success'}); 
-            submit-error:AMP.setState({formStatus: 'error'})">
-        <fieldset>
-            <label>
-                <span>Nome:</span>
-                <input type="text" name="nome" required [value]="formData.nome">
-            </label>
-            <label>
-                <span>E-mail:</span>
-                <input type="email" name="email" required [value]="formData.email">
-            </label>
-            <label>
-                <span>Telefone:</span>
-                <input type="tel" name="telefone" required [value]="formData.telefone">
-            </label>
-            <label>
-                <span>Mensagem:</span>
-                <textarea name="mensagem" rows="8" required [text]="formData.mensagem"></textarea>
-            </label>
-            <input type="submit" style="background-color: #136e28;" value="Enviar">
-        </fieldset>
-        <div submit-success>
-            <template type="amp-mustache">
-                <div id="success-message" style="color: #20b955;padding: 5px;">Mensagem enviada com sucesso!</div>
-            </template>
-        </div>
-        <div submit-error>
-            <template type="amp-mustache">
-                Ocorreu um erro. Tente novamente.
-            </template>
-        </div>
-    </form>
+<section class="contact">
+    <h2>Fale Conosco</h2>
+   <form method="post" action-xhr="../process_form.php" target="_top"
+      on="submit-success:AMP.setState({formData: {nome: '', email: '', telefone: '', mensagem: ''}}), AMP.setState({formStatus: 'success'}); 
+          submit-error:AMP.setState({formStatus: 'error'})">
+    <fieldset>
+        <label>
+            <span>Nome:</span>
+            <input type="text" name="nome" required [value]="formData.nome">
+        </label>
+        <label>
+            <span>E-mail:</span>
+            <input type="email" name="email" required [value]="formData.email">
+        </label>
+        <label>
+            <span>Telefone:</span>
+            <input type="tel" name="telefone" required [value]="formData.telefone">
+        </label>
+        <label>
+            <span>Mensagem:</span>
+            <textarea name="mensagem" rows="8" required [text]="formData.mensagem"></textarea>
+        </label>
+        <input type="submit" value="Enviar">
+    </fieldset>
+    <div submit-success>
+        <template type="amp-mustache">
+            <div id="success-message" style="color: #20b955;padding: 5px;">Mensagem enviada com sucesso!</div>
+        </template>
+    </div>
+    <div submit-error>
+        <template type="amp-mustache">
+            Ocorreu um erro. Tente novamente.
+        </template>
+    </div>
+</form>
 
-    <amp-state id="formData">
-    <script type="application/json">
-        {
-        "nome": "",
-        "email": "",
-        "telefone": "",
-        "mensagem": ""
-        }
-    </script>
-    </amp-state>
-    </section>
+<amp-state id="formData">
+  <script type="application/json">
+    {
+      "nome": "",
+      "email": "",
+      "telefone": "",
+      "mensagem": ""
+    }
+  </script>
+</amp-state>
+</section>
 
     <!-- Endereço -->
     <section class="address">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5a2.5 2.5 0 0 1 0-5a2.5 2.5 0 0 1 0 5"/></svg>
+        <amp-anim src="https://seo.smartcriacao.com/uploads/mapa.gif" width="100" height="100" alt="Mapa"></amp-anim>
         <p>Endereço</p>
         <p>{endereco_completo}</p>
-        <a href="{link_google_maps}" target="_blank" style="background-color: #136e28;" rel="noopener noreferrer">Ver Localização no Google Maps</a>
+        <a href="{link_google_maps}" target="_blank" rel="noopener noreferrer">Ver Localização no Google Maps</a>
     </section>
 
     <!-- Créditos -->
@@ -810,69 +740,7 @@
 
     <!-- Botão do WhatsApp no rodapé -->
     <a href="https://api.whatsapp.com/send?phone=55{whatsapp}&text={mensagem_padrao_whatsapp}" class="whatsapp-button whatsapp-link" target="_blank" aria-label="WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M23.328 19.177c-.401-.203-2.354-1.156-2.719-1.292c-.365-.13-.63-.198-.896.203c-.26.391-1.026 1.286-1.26 1.547s-.464.281-.859.104c-.401-.203-1.682-.62-3.203-1.984c-1.188-1.057-1.979-2.359-2.214-2.76c-.234-.396-.026-.62.172-.818c.182-.182.401-.458.604-.698c.193-.24.255-.401.396-.661c.13-.281.063-.5-.036-.698s-.896-2.161-1.229-2.943c-.318-.776-.651-.677-.896-.677c-.229-.021-.495-.021-.76-.021s-.698.099-1.063.479c-.365.401-1.396 1.359-1.396 3.297c0 1.943 1.427 3.823 1.625 4.104c.203.26 2.807 4.26 6.802 5.979c.953.401 1.693.641 2.271.839c.953.302 1.823.26 2.51.161c.76-.125 2.354-.964 2.688-1.901c.339-.943.339-1.724.24-1.901c-.099-.182-.359-.281-.76-.458zM16.083 29h-.021c-2.365 0-4.703-.641-6.745-1.839l-.479-.286l-5 1.302l1.344-4.865l-.323-.5a13.166 13.166 0 0 1-2.021-7.01c0-7.26 5.943-13.182 13.255-13.182c3.542 0 6.865 1.38 9.365 3.88a13.058 13.058 0 0 1 3.88 9.323C29.328 23.078 23.39 29 16.088 29zM27.359 4.599C24.317 1.661 20.317 0 16.062 0C7.286 0 .14 7.115.135 15.859c0 2.792.729 5.516 2.125 7.927L0 32l8.448-2.203a16.13 16.13 0 0 0 7.615 1.932h.005c8.781 0 15.927-7.115 15.932-15.865c0-4.234-1.651-8.219-4.661-11.214z"/></svg>
+        <amp-img src="https://seo.smartcriacao.com/uploads/whatsaap.webp" width="40" height="40" layout="fixed" alt="WhatsApp"></amp-img>
     </a>
-
-    <script>
-    // Função para carregar script dinamicamente
-    function loadScript(url) {
-        const script = document.createElement('script');
-        script.src = url;
-        script.async = true;
-        document.head.appendChild(script);
-    }
-
-    // Função para observar quando a seção do formulário entra na visualização
-    function observeForm() {
-        const formSection = document.querySelector('.contact');
-        
-        const options = {
-            root: null, // viewport
-            threshold: 0.1 // 10% do elemento visível
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Carrega o script amp-form quando a seção está visível
-                    loadScript('https://cdn.ampproject.org/v0/amp-form-0.1.js');
-                    observer.unobserve(entry.target); // Para de observar após carregar
-                }
-            });
-        }, options);
-
-        observer.observe(formSection); // Começa a observar a seção do formulário
-    }
-
-    // Função para observar quando a seção de analytics entra na visualização
-    function observeAnalytics() {
-        const targetElement = document.querySelector('.hero-content'); // Carrega o script quando a .hero-content estiver visível
-        
-        const options = {
-            root: null, // viewport
-            threshold: 0.1 // 10% do elemento visível
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Carrega o script amp-analytics quando a seção está visível
-                    loadScript('https://cdn.ampproject.org/v0/amp-analytics-0.1.js');
-                    observer.unobserve(entry.target); // Para de observar após carregar
-                }
-            });
-        }, options);
-
-        observer.observe(targetElement); // Começa a observar o elemento alvo
-    }
-
-    // Inicia os observadores quando a página carrega
-    window.addEventListener('DOMContentLoaded', (event) => {
-        observeForm();      // Observa o formulário
-        observeAnalytics(); // Observa o hero-content para analytics
-    });
-</script>
-
-    
 </body>
 </html>
