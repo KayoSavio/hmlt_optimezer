@@ -23,7 +23,7 @@
     <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
     <style>
         .hero {
-            background: url('./thumbnail-default.jpg') no-repeat center center;
+            background: url('{imagem_fundo}') no-repeat center center;
             background-size: cover;
             color: #fff;
             text-align: left;
@@ -608,7 +608,7 @@
           "@context": "http://schema.org",
           "@type": "NewsArticle",
           "headline": "{titulo_principal}",
-          "image": ["./thumbnail-default.jpg"],
+          "image": ["{imagem_servico}"],
           "datePublished": "{data_criacao}",
           "dateModified": "{data_criacao}",
           "author": {
@@ -701,7 +701,7 @@
     <!-- Serviço -->
     <section class="service">
         <div class="service-container">
-            <amp-img alt="Imagem do serviço" src="./thumbnail-default.jpg" width="800" height="500" layout="responsive"></amp-img>
+            <amp-img alt="Imagem do serviço" src="{imagem_servico}" width="800" height="500" layout="responsive"></amp-img>
             <div class="content-wrapper">
                 <div class="text-content">
                     <h2>{titulo_servico}</h2>
