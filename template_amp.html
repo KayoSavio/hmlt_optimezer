@@ -18,8 +18,8 @@
     <script defer src="https://cdn.ampproject.org/v0.js"></script>
     <!-- <script defer custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script> -->
     <!-- <script defer custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script> -->
-    <!-- <script defer custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <script defer custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script> -->
+    <script defer custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script defer custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <style>
         .hero {
             background: url('{imagem_fundo}') no-repeat center center;
@@ -837,7 +837,7 @@
     
         // Função para observar quando a seção de analytics entra na visualização
         function observeAnalytics() {
-            const targetElement = document.querySelector('.hero-content'); // Carrega o script quando .hero-content estiver visível
+            const targetElement = document.querySelector('.hero-content'); // Carrega o script quando a .hero-content estiver visível
             
             const options = {
                 root: null, // viewport
@@ -857,37 +857,12 @@
             observer.observe(targetElement); // Começa a observar o elemento alvo
         }
     
-        // Função para observar quando `amp-bind` e `amp-mustache` forem necessários
-        function observeBindAndMustache() {
-            const targetElement = document.querySelector('.service'); // Supondo que .service usa amp-bind e amp-mustache
-    
-            const options = {
-                root: null, // viewport
-                threshold: 0.1 // 10% do elemento visível
-            };
-    
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Carrega os scripts amp-bind e amp-mustache quando a seção está visível
-                        loadScript('https://cdn.ampproject.org/v0/amp-bind-0.1.js');
-                        loadScript('https://cdn.ampproject.org/v0/amp-mustache-0.2.js');
-                        observer.unobserve(entry.target); // Para de observar após carregar
-                    }
-                });
-            }, options);
-    
-            observer.observe(targetElement); // Começa a observar o elemento alvo
-        }
-    
         // Inicia os observadores quando a página carrega
         window.addEventListener('DOMContentLoaded', (event) => {
-            observeForm();            // Observa o formulário
-            observeAnalytics();       // Observa o hero-content para analytics
-            observeBindAndMustache(); // Observa o serviço para bind e mustache
+            observeForm();      // Observa o formulário
+            observeAnalytics(); // Observa o hero-content para analytics
         });
     </script>
-    
     
     
 </body>
