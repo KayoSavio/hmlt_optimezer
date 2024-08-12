@@ -7,7 +7,7 @@
     <meta name="description" content="{meta_descricao}">
     <meta name="keywords" content="{meta_keywords}">
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="googlebot" content="INDEX, FOLLOW" />
     <meta name="referrer" content="always">
     <meta name="language" content="pt-br">
     <meta name="author" content="{nome_empresa}">
@@ -80,7 +80,7 @@
 
         a{
             text-decoration: none;
-            color: #0056b3;
+            color: #56c1ed;
         }
        
         .hero {
@@ -149,6 +149,7 @@
             box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.05); 
             border-radius: 10px; 
             margin: 1vw;
+            
         }
         
         .feature-item h2 {
@@ -165,8 +166,8 @@
         }
         
         .btn {
-            background: #25D366;
-            color:  #FFFFFF;
+            background: #28a745;
+            color: #fff;
             border: none;
             padding: 0.5em 1em;
             text-decoration: none;
@@ -176,8 +177,9 @@
             cursor: pointer;
             transition: background 0.3s ease-in-out;
         }
+        
         .btn:hover {
-            background: #20b955;
+            background: #218838;
         }
 
         h2 {
@@ -228,7 +230,7 @@
             align-items: center;
             padding: 0vw;
             background: #f5f5f5; 
-            color: #000;
+            color: #fff;
             width: 100%;
         }
 
@@ -370,7 +372,7 @@
 
         .address {
             background: #fff;
-            color: #000;
+            color: #fff;
             text-align: center;
             padding: 6em 5vw;
         }
@@ -615,7 +617,7 @@
             }
         </script>
     </amp-analytics>
-
+    
     <!-- Primeira Dobra -->
     <section class="hero">
         <div class="hero-content">
@@ -713,6 +715,8 @@
     </div>
 </form>
 
+
+
 <amp-state id="formData">
   <script type="application/json">
     {
@@ -725,12 +729,13 @@
 </amp-state>
 </section>
 
+
     <!-- Endereço -->
     <section class="address">
         <amp-anim src="https://seo.smartcriacao.com/uploads/mapa.gif" width="100" height="100" alt="Mapa"></amp-anim>
         <p>Endereço</p>
         <p>{endereco_completo}</p>
-        <a href="{link_google_maps}" target="_blank" rel="noopener noreferrer">Ver Localização no Google Maps</a>
+        <a href="{link_google_maps}" target="_blank">Ver Localização no Google Maps</a>
     </section>
 
     <!-- Créditos -->
